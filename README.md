@@ -80,6 +80,26 @@ require("pdf").setup({
   view = { mode = "auto", dpi = 140 },
 })
 
+-- 或者
+
+require("pdf").setup({
+  tools = {
+    pdfinfo = "pdfinfo",
+    pdftotext = "pdftotext",
+    pdftoppm = "pdftoppm",
+    qpdf = "qpdf",
+  },
+  view = {
+    mode = "auto", -- auto | image | text
+    dpi = 140,
+    zoom = 1.0,
+    layout_text = true,
+  },
+  auto_open = true,
+  confirm_overwrite = true,
+  keymaps = true,
+})
+
 -- 方式 B：Vim 傳統套件目錄（重啟後自動載入 plugin/）
 -- ln -s /path/to/pdf.nvim ~/.local/share/nvim/site/pack/pdf/start/pdf.nvim
 ```
